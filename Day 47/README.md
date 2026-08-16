@@ -43,7 +43,7 @@ Layer 4 = WHICH PORT? (TCP/UDP)
 Layer 7 = WHAT REQUEST? (HTTP URL)
 For your EKS interviews, a very common follow-up question is: "Why use ALB instead of NLB for Kubernetes Ingress?". The answer is mostly about Layer 7 capabilities such as path-based and host-based routing.
 
-```
+
 <img width="781" height="805" alt="image" src="https://github.com/user-attachments/assets/ef85ed0c-6dd7-46ac-832a-2da3dda265d6" />
 
 
