@@ -45,7 +45,16 @@ For your EKS interviews, a very common follow-up question is: "Why use ALB inste
 
 
 <img width="781" height="805" alt="image" src="https://github.com/user-attachments/assets/ef85ed0c-6dd7-46ac-832a-2da3dda265d6" />
+There are two different IP allocation mechanisms involved:
 
+                    Kubernetes cluster
+                           │
+              ┌────────────┴────────────┐
+              │                         │
+        Pod IP allocation         Service IP allocation
+              │                         │
+             CNI                  kube-apiserver
+       (Calico/Cilium/etc.)       + cluster CIDR
 
 ## Introduction
 
