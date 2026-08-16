@@ -126,6 +126,7 @@ Some well-known CNIs **that support NetworkPolicies** include **Calico**, **Cili
 You can check your CNI by running:
 
 ```bash
+ds- Damemonset
 kubectl get ds -n kube-system
 ```
 
