@@ -36,7 +36,108 @@ If this **repository** helps you, give it a ⭐ to show your support and help ot
 * [References](#references)  
 
 ---
+Layer 3 routes packets using IP addresses. Layer 4 delivers traffic to the correct application using TCP/UDP ports. Layer 7 understands application protocols such as HTTP/HTTPS and can make decisions based on URLs, headers, and request content. In AWS, NLB operates mainly at Layer 4, while ALB operates at Layer 7. ￼￼￼
+Easy Memory Trick
+Layer 3 = WHERE?   (IP Address)
+Layer 4 = WHICH PORT? (TCP/UDP)
+Layer 7 = WHAT REQUEST? (HTTP URL)
+For your EKS interviews, a very common follow-up question is: "Why use ALB instead of NLB for Kubernetes Ingress?". The answer is mostly about Layer 7 capabilities such as path-based and host-based routing.
 
+```
+Feature
+Layer 3 (Network)
+Layer 4 (Transport)
+Layer 7 (Application)
+OSI Layer Name
+Network Layer
+Transport Layer
+Application Layer 1
+Uses
+IP Addresses
+TCP/UDP Ports
+HTTP, HTTPS, APIs, URLs 23
+Understands
+Source/Destination IP
+IP + Port + Connection State
+URL, Headers, Cookies, Request Data 24
+Main Purpose
+Route packets between networks
+Deliver traffic to correct application port
+Understand application requests 25
+Protocols
+IP, ICMP
+TCP, UDP
+HTTP, HTTPS, gRPC, REST 35
+Example Data
+10.0.1.10 → 10.0.2.20
+TCP 443
+GET /api/users 23
+Question Answered
+"Where should packet go?"
+"Which port?"
+"What is user requesting?" 2
+Devices
+Router, Layer 3 Switch
+NLB, Stateful Firewall
+ALB, WAF, API Gateway 42
+Load Balancing
+IP-based
+Port-based
+Path/Host/Header-based 2
+Can See URL?
+❌ No
+❌ No
+✅ Yes 24
+Can See HTTP Headers?
+❌ No
+❌ No
+✅ Yes 2
+Performance
+Fastest
+Fast
+Slightly Slower (more inspection) 24
+AWS Example
+VPC Routing Tables
+Network Load Balancer (NLB)
+Application Load Balancer (ALB), API Gateway 2
+EKS Example
+Request
+Layer Used
+Route packet to Pod IP 10.1.2.5
+Layer 3
+Send traffic to TCP Port 8080
+Layer 4
+Route /api/* to Backend Service
+Layer 7
+Route /frontend/* to Frontend Service
+Layer 7
+TCP 443 listener on NLB
+Layer 4
+ALB Ingress path-based routing
+Layer 7
+Interview Shortcut
+Layer
+Remember As
+Layer 3
+WHERE? (IP Address)
+Layer 4
+WHICH PORT? (TCP/UDP)
+Layer 7
+WHAT REQUEST? (HTTP URL/API)
+For AWS/EKS interviews, a common mapping is:
+AWS Service
+Layer
+Route Tables
+Layer 3
+NLB
+Layer 4
+ALB
+Layer 7
+API Gateway
+Layer 7
+WAF
+
+```
 
 ## Introduction
 
