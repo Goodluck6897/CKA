@@ -23,6 +23,13 @@ We executed the command from the CLI to create Kubernetes clusters using **Kind*
 ## First Scenario: *my-first-cluster*
 - The cluster was created using the following command:
   ```bash
+  # For M1 / ARM Macs
+[ $(uname -m) = arm64 ] && curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.32.0/kind-darwin-arm64
+chmod +x ./kind
+mv ./kind /some-dir-in-your-PATH/kind
+
+  brew install kind
+  
   kind create cluster --name my-first-cluster --config kind-cluster.yaml
   ```
   Here is **kind-cluster.yaml**
