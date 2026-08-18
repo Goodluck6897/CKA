@@ -337,6 +337,7 @@ Annotations in Kubernetes are key-value pairs used to attach arbitrary metadata 
 
 We'll demonstrate rolling updates and rollbacks in a Kubernetes Deployment using the following steps:
 
+Valid Annontations:https://kubernetes.io/docs/reference/labels-annotations-taints/#change-cause
 ---
 
 #### **Step 1: Deployment YAML**
