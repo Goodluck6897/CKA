@@ -143,6 +143,8 @@ kubectl create rc nginx-rc --image=nginx --replicas=3
 ```
 
 > **Note:** The `kubectl create rc` command was supported in earlier Kubernetes versions, but it has been removed from the `kubectl` CLI as ReplicationControllers are now rarely used and largely replaced by ReplicaSets and Deployments. While RCs can still be created declaratively via YAML, the imperative shortcut no longer exists in modern `kubectl` versions.
+>
+> Deployments (Deployment) & ReplicaSets (RS): Standard Kubernetes native objects replaced the older OpenShift-specific DeploymentConfig (DC) and ReplicationController (RC).
 
 ---
 
