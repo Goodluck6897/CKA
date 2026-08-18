@@ -321,7 +321,7 @@ spec:
 
 ### Explaining Rolling Updates and Rollbacks in Deployments with Annotations
 
-**What Are Annotations in Kubernetes?**
+**What Are Annotations in Kubernetes?** 38:06
 
 Annotations in Kubernetes are key-value pairs used to attach arbitrary metadata to Kubernetes objects. Unlike labels (which are used for selection and grouping), annotations are intended for non-identifying information that helps tools, scripts, or humans understand the purpose, context, or other details of the object.
 
