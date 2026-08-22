@@ -51,6 +51,26 @@ We need encryption to:
 
 ![Alt text](/images/30a.png)
 
+This diagram illustrates how a website obtains a secure SSL/TLS certificate from a **Certificate Authority (CA)**—in this case, **Let's Encrypt**—so users can connect securely over HTTPS.
+
+---
+
+**1. Requesting the Certificate**
+
+* **Website (`pakbank.com`):** Generates its own pair of cryptographic keys: a **Public Key** (shared with everyone) and a **Private Key** (kept secret).
+* **CSR (Certificate Signing Request):** The website packages its domain name (`pakbank.com`) and its **Public Key** into a request file (CSR) and sends it to the Certificate Authority (**Let's Encrypt**).
+
+**2. Validation and Issuance**
+
+* **Domain Ownership Validation:** Let's Encrypt automatically checks if `pakbank.com` actually controls the server requesting the certificate.
+* **Signing the Certificate:** Once verified, Let's Encrypt signs the SSL certificate using its **own Private Key** and sends the signed certificate back to the website.
+
+**3. Public Verification**
+
+* **Let's Encrypt's Public Key:** Web browsers (like Chrome or Firefox) come pre-packaged with the Public Keys of trusted Certificate Authorities.
+* **Verification:** When a user visits `pakbank.com`, the browser uses **Let's Encrypt's Public Key** to decrypt the digital signature on the certificate. This confirms two things:
+1. The certificate was genuinely issued by trusted Let's Encrypt.
+2. The website's identity and Public Key have not been tampered with.
 
 ### 1. Symmetric Encryption (Shared Key Encryption)
 
