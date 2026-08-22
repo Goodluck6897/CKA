@@ -50,6 +50,8 @@ We need encryption to:
 ## Two Main Types of Encryption
 
 ![Alt text](/images/30a.png)
+<img width="1024" height="685" alt="image" src="https://github.com/user-attachments/assets/097645e8-1b0a-4f98-a406-6f21bca74ba3" />
+
 
 This diagram illustrates how a website obtains a secure SSL/TLS certificate from a **Certificate Authority (CA)**—in this case, **Let's Encrypt**—so users can connect securely over HTTPS.
 
