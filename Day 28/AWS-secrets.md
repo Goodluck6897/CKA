@@ -273,6 +273,7 @@ secretObjects:
 ```
 
 This tells the Secrets Store CSI Driver:
+The CSI driver fetches the secret from AWS Secrets Manager
 
 > After retrieving the secret from AWS, create/synchronise a Kubernetes Secret called `catalog-secret`.
 
