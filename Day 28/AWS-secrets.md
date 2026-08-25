@@ -247,85 +247,6 @@ The IAM role should have permission similar to:
 This is much better than putting AWS credentials inside your Kubernetes YAML.
 
 ---
-
-
-/////
-
-Absolutely. This `SecretProviderClass` is doing something very common in EKS: **reading a JSON secret from AWS Secrets Manager and making its individual fields available as a Kubernetes Secret**.
-
-Let's go line by line.
-
-### 1. What is this doing overall?
-
-Your flow is:
-
-```text
-AWS Secrets Manager
-        │
-        │ GetSecretValue
-        ▼
-EKS Pod Identity
-        │
-        ▼
-Secrets Store CSI Driver
-        │
-        ▼
-SecretProviderClass
-        │
-        ├──────────────► mounted secret files
-        │
-        └──────────────► Kubernetes Secret
-                              │
-                              ▼
-                         catalog-secret
-                              │
-                              ▼
-                         Application Pod
-```
-
-Your AWS Secrets Manager secret probably looks something like:
-
-```json
-{
-  "username": "cataloguser",
-  "password": "MyPassword123"
-}
-```
-
----
-
-
-
----
-
-# 4. Metadata
-
-```yaml
-metadata:
-  name: catalog-spc
-  namespace: catalog
-```
-
-You're creating a resource called:
-
-```text
-catalog-spc
-```
-
-inside the Kubernetes namespace:
-
-```text
-catalog
-```
-
-Your Deployment will later refer to this name:
-
-```yaml
-secretProviderClass: catalog-spc
-```
-
-
-
 # 7. `objectType`
 
 ```yaml
@@ -435,6 +356,85 @@ DB_PASSWORD=MyPassword123
 without those values being hardcoded in the Deployment.
 
 ---
+
+/////
+
+Absolutely. This `SecretProviderClass` is doing something very common in EKS: **reading a JSON secret from AWS Secrets Manager and making its individual fields available as a Kubernetes Secret**.
+
+Let's go line by line.
+
+### 1. What is this doing overall?
+
+Your flow is:
+
+```text
+AWS Secrets Manager
+        │
+        │ GetSecretValue
+        ▼
+EKS Pod Identity
+        │
+        ▼
+Secrets Store CSI Driver
+        │
+        ▼
+SecretProviderClass
+        │
+        ├──────────────► mounted secret files
+        │
+        └──────────────► Kubernetes Secret
+                              │
+                              ▼
+                         catalog-secret
+                              │
+                              ▼
+                         Application Pod
+```
+
+Your AWS Secrets Manager secret probably looks something like:
+
+```json
+{
+  "username": "cataloguser",
+  "password": "MyPassword123"
+}
+```
+
+---
+
+
+
+---
+
+# 4. Metadata
+
+```yaml
+metadata:
+  name: catalog-spc
+  namespace: catalog
+```
+
+You're creating a resource called:
+
+```text
+catalog-spc
+```
+
+inside the Kubernetes namespace:
+
+```text
+catalog
+```
+
+Your Deployment will later refer to this name:
+
+```yaml
+secretProviderClass: catalog-spc
+```
+
+
+
+
 
 # 13. Complete flow
 
