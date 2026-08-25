@@ -1,3 +1,4 @@
+```yaml
 apiVersion: secrets-store.csi.x-k8s.io/v1
 kind: SecretProviderClass
 metadata:
@@ -23,7 +24,7 @@ spec:
           key: username
         - objectName: password
           key: password
-
+```
 --
 
 # 2. `apiVersion`
