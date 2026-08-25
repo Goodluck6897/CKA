@@ -155,6 +155,15 @@ jmesPath:
 ```yaml
 - path: username
   objectAlias: username
+
+
+path: This is a JMESPath expression that queries the JSON secret from AWS. It specifies which field to extract from the JSON object.
+
+In your case, path: username means "find the username field in the JSON secret."
+
+objectAlias: This is the name you give to the extracted value after retrieval. It's what the Secrets Store CSI Driver will call this object internally.
+
+
 ```
 
 Means:
