@@ -53,8 +53,9 @@ In this demo, we deploy a **production-aligned MySQL StatefulSet** on an **Amazo
 Let’s begin with two crisp definitions:
 
 * **Stateless**: A stateless application is **just code**. It can be stopped, restarted, or rescheduled without disrupting users or data.
+Ex:Web tier, it has to store session data, databse
 * **Stateful**: A stateful application is **code + data, tightly coupled**. Its behavior depends on internal memory or persistent data it holds or stores.
-
+Backed app as it just processes the login it will not store the data
 ---
 
 ## The Classic Three-Tier Architecture
