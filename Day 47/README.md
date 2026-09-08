@@ -36,7 +36,12 @@ If this **repository** helps you, give it a ⭐ to show your support and help ot
 * [References](#references)  
 
 ---
-Layer 3 routes packets using IP addresses. Layer 4 delivers traffic to the correct application using TCP/UDP ports. Layer 7 understands application protocols such as HTTP/HTTPS and can make decisions based on URLs, headers, and request content. In AWS, NLB operates mainly at Layer 4, while ALB operates at Layer 7. ￼￼￼
+Layer 3 routes packets using IP addresses. Layer 4 delivers traffic to the correct application using TCP/UDP ports. 
+
+Layer 7 understands application protocols such as HTTP/HTTPS and can make decisions based on URLs, headers, and request content.
+
+In AWS, NLB operates mainly at Layer 4, while ALB operates at Layer 7. ￼￼￼
+
 Easy Memory Trick
 Layer 3 = WHERE?   (IP Address)
 Layer 4 = WHICH PORT? (TCP/UDP)
