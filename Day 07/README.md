@@ -17,6 +17,7 @@ If this **repository** helps you, give it a ⭐ to show your support and help ot
 - **Network namespaces** in Kubernetes provide an isolated network environment for each Pod. Each Pod has its own unique network namespace, which means it has its own IP address, network interfaces, and routing tables.
 - All containers within a Pod share the same network namespace, meaning they can communicate with each other using **localhost** and have direct access to each other’s ports.
 - This isolation ensures that Pods can communicate with each other using their internal IPs, but also keeps them separated from other Pods' networks within the cluster.
+- The fundamental rule of the Kubernetes networking model is that the cluster network is completely flat: every Pod gets its own IP address, and every Pod can talk to every other Pod directly, regardless of what namespace they live in
 
 
 
